@@ -1,0 +1,32 @@
+'use client';
+import { useRef } from 'react';
+import GooeyNav from '../components/GooeyNav';
+import DomeGallery from '../components/DomeGallery';
+import TrailingCursor from '../components/TrailingCursor';
+
+export default function Home() {
+  const galleryRef = useRef(null);
+
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Reach Out', href: '/reachout' },
+    { label: 'Shop', href: '/shop' },
+  ];
+
+  const galleryItems = [
+    { type: 'placeholder', color: '#ff6f61' },
+    { type: 'placeholder', color: '#6b5b95' },
+    { type: 'placeholder', color: '#88b04b' },
+    { type: 'placeholder', color: '#f7cac9' },
+    { type: 'placeholder', color: '#92a8d1' },
+    { type: 'placeholder', color: '#955251' },
+  ];
+
+  return (
+    <div>
+      <GooeyNav items={navItems} />
+      <DomeGallery ref={galleryRef} items={galleryItems} />
+      <TrailingCursor element={document.body} particles={20} rate={0.3} />
+    </div>
+  );
+}
